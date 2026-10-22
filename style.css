@@ -1,177 +1,243 @@
-```css
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: #101018;
-    color: white;
+    background: #050d1c;
+    color: #f4f7ff;
+    line-height: 1.6;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 22px 8%;
-    background: #191923;
+    padding: 22px 7%;
+    background: #09162b;
+    border-bottom: 1px solid #193451;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 header h2 {
-    color: #f5b544;
+    color: #ff426d;
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: white;
+    color: #dce8ff;
     text-decoration: none;
-    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #f5b544;
+    color: #ff426d;
 }
 
 .hero {
+    margin: 28px auto;
+    width: 90%;
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #25203a, #6c2947);
+    padding: 85px 20px;
+    border: 1px solid #214d78;
+    border-radius: 22px;
+    background:
+        radial-gradient(ellipse at top, #432044 0%, transparent 60%),
+        linear-gradient(135deg, #102746, #080f20 70%);
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.2;
     margin-bottom: 18px;
+    background: linear-gradient(90deg, #ffffff, #ff426d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .hero p {
-    color: #ddd;
-    margin-bottom: 30px;
+    color: #bdcce4;
+    margin-bottom: 28px;
+    font-size: 18px;
 }
 
-.btn {
+.btn,
+button {
     display: inline-block;
     padding: 13px 24px;
-    background: #f5b544;
-    color: #171717;
-    border-radius: 6px;
+    background: linear-gradient(135deg, #ff426d, #ed2454);
+    color: white;
+    border: none;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.btn:hover,
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #ff426d55;
 }
 
 section:not(.hero) {
-    padding: 55px 8%;
+    padding: 55px 7%;
+    scroll-margin-top: 90px;
 }
 
 section h2 {
     text-align: center;
-    margin-bottom: 30px;
+    font-size: 32px;
+    margin-bottom: 32px;
 }
 
 .movies {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
 }
 
 .movie {
-    background: #1d1d29;
-    border: 1px solid #383747;
-    border-radius: 12px;
-    padding: 25px;
+    background: linear-gradient(160deg, #10213d, #091427);
+    border: 1px solid #233f61;
+    border-radius: 18px;
+    padding: 24px;
     text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+    box-shadow: 0 12px 30px #00000020;
+}
+
+.movie:hover {
+    transform: translateY(-8px);
+    border-color: #ff426d;
 }
 
 .poster {
-    font-size: 65px;
-    padding: 25px;
-    background: #30283d;
-    border-radius: 8px;
+    font-size: 72px;
+    padding: 30px 15px;
+    background: linear-gradient(135deg, #263d63, #391d3c);
+    border-radius: 13px;
     margin-bottom: 20px;
 }
 
 .movie h3 {
-    margin-bottom: 12px;
+    font-size: 22px;
+    margin-bottom: 8px;
 }
 
 .movie p {
-    color: #bbb;
-    margin-bottom: 18px;
-}
-
-button {
-    border: none;
-    background: #f5b544;
-    color: #171717;
-    padding: 12px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover,
-.btn:hover {
-    background: #ffd477;
+    color: #aebed8;
+    margin-bottom: 20px;
 }
 
 #booking form {
-    max-width: 450px;
+    max-width: 500px;
     margin: auto;
-    background: #1d1d29;
-    padding: 25px;
-    border-radius: 10px;
+    background: #0c1a30;
+    padding: 30px;
+    border: 1px solid #28476b;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px #00000030;
 }
 
 label {
     display: block;
-    margin: 15px 0 8px;
+    margin: 16px 0 8px;
+    color: #dbe6fa;
+    font-weight: bold;
 }
 
 input,
 select {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background: #101018;
+    padding: 14px;
+    border: 1px solid #304968;
+    border-radius: 9px;
+    background: #071226;
     color: white;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #ff426d;
+    border-color: transparent;
 }
 
 #booking button {
     width: 100%;
-    margin-top: 22px;
+    margin-top: 24px;
+    font-size: 16px;
 }
 
 #message {
     text-align: center;
     margin-top: 20px;
-    color: #f5b544;
+    color: #35e0b2;
+    font-weight: bold;
 }
 
 footer {
-    background: #191923;
-    color: #bbb;
+    background: #091427;
+    color: #9eafca;
     text-align: center;
-    padding: 25px;
-    font-size: 14px;
+    padding: 28px 15px;
+    border-top: 1px solid #193451;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     header {
         flex-direction: column;
-        gap: 18px;
+        gap: 14px;
+        padding: 18px;
     }
 
-    nav a {
-        margin: 0 7px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
+    nav {
+        justify-content: center;
+        gap: 16px;
     }
 
     .movies {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding: 60px 18px;
     }
 }
-```
+
+@media (max-width: 520px) {
+    .movies {
+        grid-template-columns: 1fr;
+    }
+
+    section:not(.hero) {
+        padding: 38px 5%;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    .movie {
+        padding: 20px;
+    }
+}
