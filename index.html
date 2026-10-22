@@ -1,0 +1,77 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Theatre Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>🎬 CineQueue</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#booking">Book Tickets</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Your Movie Night Starts Here</h1>
+    <p>Discover movies, reserve tickets, and enjoy the show.</p>
+    <a class="btn" href="#movies">Explore Movies</a>
+</section>
+
+<section id="movies">
+    <h2>Now Showing</h2>
+    <div class="movies">
+        <div class="movie">
+            <div class="poster">🚀</div>
+            <h3>Interstellar</h3>
+            <p>Sci-Fi | Adventure</p>
+            <button onclick="chooseMovie('Interstellar')">Book Now</button>
+        </div>
+        <div class="movie">
+            <div class="poster">🌀</div>
+            <h3>Inception</h3>
+            <p>Sci-Fi | Thriller</p>
+            <button onclick="chooseMovie('Inception')">Book Now</button>
+        </div>
+        <div class="movie">
+            <div class="poster">🦇</div>
+            <h3>The Dark Knight</h3>
+            <p>Action | Crime</p>
+            <button onclick="chooseMovie('The Dark Knight')">Book Now</button>
+        </div>
+    </div>
+</section>
+
+<section id="booking">
+    <h2>Book Your Ticket</h2>
+    <form id="bookingForm">
+        <label for="customer">Your Name</label>
+        <input id="customer" type="text" placeholder="Enter your name" required>
+
+        <label for="movie">Choose Movie</label>
+        <select id="movie" required>
+            <option value="">Select a movie</option>
+            <option>Interstellar</option>
+            <option>Inception</option>
+            <option>The Dark Knight</option>
+        </select>
+
+        <button type="submit">Book Ticket</button>
+    </form>
+    <p id="message"></p>
+</section>
+
+<footer>
+    <p>© 2026 CineQueue | Movie Theatre Ticket and Waiting Queue System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+```
